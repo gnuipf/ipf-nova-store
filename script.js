@@ -164,29 +164,55 @@ function renderProducts() {
         Tente outra busca ou categoria.
       </p>
     `;
-
     return;
   }
 
   productGrid.innerHTML = filteredProducts
     .map(product => {
-      const image = getImageUrl(product.images[0]);
+      const images = product.images || [];
+      const image = getImageUrl(images[0] || "");
+      const hasMultipleImages = images.length > 1;
 
       return `
-        <article class="product-card">
-
+        <article class="product-card" data-product-id="${escapeHTML(product.id)}">
           <div class="product-image-wrap">
+
             <img
               class="product-image"
               src="${image}"
+              data-image-index="0"
               alt="${escapeHTML(product.name)}"
               loading="lazy"
               onerror="this.onerror=null;this.style.display='none';"
             >
+
+            ${
+              hasMultipleImages
+                ? `
+                  <button
+                    class="image-arrow image-arrow-prev"
+                    type="button"
+                    data-image-direction="-1"
+                    aria-label="Imagem anterior de ${escapeHTML(product.name)}"
+                  >&#10094;</button>
+
+                  <button
+                    class="image-arrow image-arrow-next"
+                    type="button"
+                    data-image-direction="1"
+                    aria-label="Próxima imagem de ${escapeHTML(product.name)}"
+                  >&#10095;</button>
+
+                  <span class="image-counter" aria-live="polite">
+                    1 / ${images.length}
+                  </span>
+                `
+                : ""
+            }
+
           </div>
 
           <div class="product-details">
-
             <p class="product-category">
               ${escapeHTML(product.categoryLabel)}
             </p>
@@ -210,15 +236,12 @@ function renderProducts() {
                 <span aria-hidden="true">↗</span>
               </button>
             </div>
-
           </div>
-
         </article>
       `;
     })
     .join("");
 }
-
 
 /* =====================================================
    EVENTOS DA BUSCA E DOS FILTROS
