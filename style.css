@@ -556,6 +556,68 @@ input:focus-visible {
   transform: scale(1.04);
 }
 
+
+/* Navegação entre imagens dos produtos */
+.image-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  background: rgba(9, 9, 9, 0.78);
+  color: var(--white);
+  font-size: 17px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.image-arrow-prev {
+  left: 10px;
+}
+
+.image-arrow-next {
+  right: 10px;
+}
+
+.image-arrow:hover {
+  border-color: var(--gold);
+  background: var(--red);
+  color: white;
+}
+
+.image-counter {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  padding: 4px 8px;
+  background: rgba(9, 9, 9, 0.8);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.image-arrow:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (hover: none) {
+  .image-arrow {
+    background: rgba(9, 9, 9, 0.85);
+  }
+}
+
 /* Categoria discreta, sem selo promocional */
 
 .product-category {
