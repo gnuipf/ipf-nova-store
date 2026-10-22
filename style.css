@@ -552,11 +552,6 @@ input:focus-visible {
   transition: transform 0.35s ease;
 }
 
-.product-card:hover .product-image {
-  transform: scale(1.04);
-}
-
-
 /* Navegação entre imagens dos produtos */
 .image-arrow {
   position: absolute;
@@ -617,6 +612,13 @@ input:focus-visible {
     background: rgba(9, 9, 9, 0.85);
   }
 }
+
+
+.product-card:hover .product-image {
+  transform: scale(1.04);
+}
+
+
 
 /* Categoria discreta, sem selo promocional */
 
