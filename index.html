@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="IPF Store, loja oficial da Inaudível Por Favor. Produtos para quem vive o rock e o metal underground."
+  >
+  <meta name="theme-color" content="#090909">
+
+  <title>IPF Store</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!---
+  DIV PARA TOP BAR - UTILIZAR EM PROMOÇÕES ETC
+  <div class="top-bar">
+    
+  </div>--->
+
+  <!--<header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Inaudível Por Favor - início">
+      <img
+        class="brand-logo"
+        src="logo_sem_fundo.png"
+        alt="Inaudível Por Favor"
+      >
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#loja" class="active">Loja</a>
+    </nav>
+
+    <a
+      class="header-instagram"
+      href="https://www.instagram.com/inaudivel_por_favor/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      INSTAGRAM <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+  -->
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="red-line"></span>
+          SINCE 2025
+        </p>
+
+        <h1>
+          A INAUDÍVEL NASCEU NO<br>
+          <span>BARULHO.</span><br>
+          MUITO BARULHO!
+        </h1>
+
+        <a href="#loja" class="primary-button">
+          EXPLORAR PRODUTOS
+          <span aria-hidden="true">↘</span>
+        </a>
+
+        <div class="hero-signature">
+          <span class="signature-line"></span>
+          INAUDÍVEL POR FAVOR
+        </div>
+      </div>
+
+      <div class="hero-stamp" aria-hidden="true">
+        <span class="stamp-top">INAUDÍVEL</span>
+        <span class="stamp-center">IPF</span>
+        <span class="stamp-bottom">POR FAVOR</span>
+      </div>
+
+      <div class="hero-index" aria-hidden="true">IPF® / 001</div>
+    </section>
+
+    <section class="manifesto">
+      <div class="manifesto-symbol" aria-hidden="true">✳</div>
+
+      <div>
+        <h2>FEITO PARA QUEM CONSOME MÚSICA</h2>
+        <p class="section-kicker">FEITO PARA QUEM CONSOME MÚSICA</p>
+      </div>
+
+      <p class="manifesto-text">
+        Cada compra é uma forma de fortalecer, direta ou indiretamente, 
+        a cena e os projetos independentes que acompanhamos. É também 
+        uma maneira de valorizar a cultura, incentivar a continuidade 
+        dessas iniciativas e apoiar quem trabalha diariamente para manter 
+        a cena viva, ativa e em constante movimento.
+      </p>
+    </section>
+
+    <section class="store-section" id="loja">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">CATÁLOGO OFICIAL</p>
+          <h2>PRODUTOS<span>.</span></h2>
+        </div>
+
+        <p class="product-total" id="product-total">00 PRODUTOS</p>
+      </div>
+
+      <div class="catalog-controls">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="product-search"
+            placeholder="Buscar produtos..."
+            aria-label="Buscar produtos"
+          >
+        </label>
+
+        <div class="filter-buttons" id="filter-buttons" aria-label="Filtrar produtos">
+          <button class="filter-button active" data-filter="todos" type="button">
+            Todos
+          </button>
+          <button class="filter-button" data-filter="camiseta" type="button">
+            Camisetas
+          </button>
+          <button class="filter-button" data-filter="bottom" type="button">
+            Bottoms
+          </button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <p class="loading-message">Carregando catálogo...</p>
+      </div>
+
+      <p class="catalog-note">
+        PRODUÇÃO INDEPENDENTE. APOIO DIRETO À CENA.
+      </p>
+    </section>
+
+    <section class="closing-banner">
+      <div class="closing-content">
+        <p class="section-kicker">INAUDÍVEL POR FAVOR®</p>
+        <h2>NASCIDA NO BARULHO,<br><span>MUITO BARULHO!</span></h2>
+        <p>
+          Apoie o Underground, apoie o independente.
+        </p>
+      </div>
+
+      <div class="closing-symbol" aria-hidden="true">IPF</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#inicio" aria-label="Voltar ao início">
+      IPF<span>.</span>
+    </a>
+
+    <p>
+      © <span id="current-year"></span> Inaudível Por Favor.
+      Todos os direitos reservados.
+    </p>
+
+    
+  </footer>
+</body>
+</html>
