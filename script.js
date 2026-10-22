@@ -316,16 +316,51 @@ function openWhatsApp(productId) {
 }
 
 
+
 if (productGrid) {
   productGrid.addEventListener("click", event => {
+    // Navegação entre as imagens
+    const arrow = event.target.closest("[data-image-direction]");
+
+    if (arrow) {
+      const card = arrow.closest(".product-card");
+      const product = products.find(
+        item => item.id === card?.dataset.productId
+      );
+
+      if (!card || !product || !product.images?.length) return;
+
+      const imageElement = card.querySelector(".product-image");
+      const counter = card.querySelector(".image-counter");
+      const totalImages = product.images.length;
+
+      let currentIndex = Number(imageElement.dataset.imageIndex || 0);
+      const direction = Number(arrow.dataset.imageDirection);
+
+      currentIndex =
+        (currentIndex + direction + totalImages) % totalImages;
+
+      imageElement.dataset.imageIndex = String(currentIndex);
+      imageElement.src = getImageUrl(product.images[currentIndex]);
+      imageElement.style.display = "";
+      imageElement.alt =
+        `${product.name} - imagem ${currentIndex + 1}`;
+
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${totalImages}`;
+      }
+
+      return;
+    }
+
+    // Consulta do produto pelo WhatsApp
     const button = event.target.closest("[data-whatsapp]");
 
-    if (!button) return;
-
-    openWhatsApp(button.dataset.whatsapp);
+    if (button) {
+      openWhatsApp(button.dataset.whatsapp);
+    }
   });
 }
-
 
 /* =====================================================
    ANO AUTOMÁTICO NO RODAPÉ
